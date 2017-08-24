@@ -1,0 +1,12 @@
+rails new scf -d postgresql
+gemfile
+bundle
+audits
+devise
+rails g scaffold membro_familia nome:string telefone:string
+rails g scaffold devedor nome:string telefone:string
+rails g scaffold tipo_receita descricao:string
+rails g scaffold receitas valor:decimal descricao:text membro_familia_id:integer tipo_receita_id:integer
+rails g scaffold contas_receber descricao:string valor:decimal data:date tipo_receita_id:integer membro_familia_id:integer devedor_id:integer
+rails g scaffold tipos_despesas descricao:text
+rails g scaffold contas_a_pagar data_vencimento:date descricao:text valor:decimal tipo_despesa_id:integer membro_familia_id:integer
